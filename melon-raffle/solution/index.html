@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.13.1: http://docutils.sourceforge.net/" />
+<title>Solution</title>
+<link rel="stylesheet" href="http://fellowship.hackbrightacademy.com/tools/homework.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="solution">
+<h1 class="title">Solution</h1>
+
+<p>Split a file into three scripts, set up a virtualenv and get some practice with
+implementing classes</p>
+<div class="section" id="version-1">
+<h1>Version 1</h1>
+<ul class="simple">
+<li>Set up a virtual environemnt: <tt class="docutils literal">virtualenv env</tt></li>
+<li>Activate virtualenv: <tt class="docutils literal">source env/bin/activate</tt></li>
+<li><tt class="docutils literal">pip install ipython</tt></li>
+<li><tt class="docutils literal">pip freeze &gt; requirements.txt</tt></li>
+<li>Add <tt class="docutils literal">env/</tt> to <cite>.gitignore</cite></li>
+<li>Fix random import error: change to <cite>import random</cite></li>
+</ul>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">solution/index.rst</tt>, line 24)</p>
+<p>Unknown directive type &quot;literalinclude&quot;.</p>
+<pre class="literal-block">
+.. literalinclude:: melon_raffle.py
+    :name: melon-raffle-sol
+    :caption:
+
+
+</pre>
+</div>
+</div>
+<div class="section" id="version-2">
+<h1>Version 2</h1>
+<ul class="simple">
+<li>Copy the missing functions from <cite>raffle.py</cite> to <cite>version2/raffle.py</cite></li>
+<li>Make sure you import the <cite>get_customers_from_file</cite> function in <cite>customers</cite></li>
+</ul>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">solution/index.rst</tt>, line 36)</p>
+<p>Unknown directive type &quot;literalinclude&quot;.</p>
+<pre class="literal-block">
+.. literalinclude:: version2/raffle.py
+    :name: melon-raffle-sol-v2-raffle
+    :caption:
+</pre>
+</div>
+</div>
+</div>
+</body>
+</html>
