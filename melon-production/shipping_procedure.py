@@ -7,57 +7,12 @@ import sys
 MELON_LIMIT = 200
 
 
-def show_help():
-    print """
-shipping_procedure.py
-  Master Control Program for Automated Melon Order Fullfillment
+class Squash(object):
+    def __init__(self, name, quantity):
+        self.name = name
+        self.quantity = quantity
 
-This program processes order from an order log file and controls the
-robots used to fulfill the orders.
-
-Usage:
-
-    python shipping_procedure.py [logfile]
-
-Where:
-
-    [logfile]
-        The name of the log file you would like to process.
-        Hint: There are two files included in this project folder.
-"""
-
-
-def assess_and_pack_orders():
-    """Assesses and packs order objects.
-
-    Distinguishes between melons/squashes."""
-
-    # Check to make sure we've been passed an argument on the 
-    # command line.  If not, display instructions.
-
-    if len(sys.argv) < 2:
-        show_help()
-        sys.exit()
-
-    # Get the name of the log file to open from the command line
-    logfilename = sys.argv[1]
-
-    # Open the log file
-    f = open(logfilename)
-
-    # Read each line from the log file and process it
-
-    for line in f:
-
-        # Each line should be in the format:
-        # <melon name>: <quantity>
-        melon_type, quantity = line.rstrip().split(':')
-        quantity = int(quantity)
-
-        print "\n-----"
-        print "Fullfilling order of {} {}".format(quantity, melon_type)
-        print "-----\n"
-
+    def prep_and_painting(self):
         count = 0
         melons = []
 
@@ -111,6 +66,59 @@ def assess_and_pack_orders():
         robots.shipperbot.ship(boxes)
 
         print "------\n"
+
+
+
+def show_help():
+    print """
+shipping_procedure.py
+  Master Control Program for Automated Melon Order Fullfillment
+
+This program processes order from an order log file and controls the
+robots used to fulfill the orders.
+
+Usage:
+
+    python shipping_procedure.py [logfile]
+
+Where:
+
+    [logfile]
+        The name of the log file you would like to process.
+        Hint: There are two files included in this project folder.
+"""
+
+
+def assess_and_pack_orders():
+    """Assesses and packs order objects.
+
+    Distinguishes between melons/squashes."""
+
+    # Check to make sure we've been passed an argument on the 
+    # command line.  If not, display instructions.
+
+    if len(sys.argv) < 2:
+        show_help()
+        sys.exit()
+
+    # Get the name of the log file to open from the command line
+    logfilename = sys.argv[1]
+
+    # Open the log file
+    f = open(logfilename)
+
+    # Read each line from the log file and process it
+
+    for line in f:
+
+        # Each line should be in the format:
+        # <melon name>: <quantity>
+        melon_type, quantity = line.rstrip().split(':')
+        quantity = int(quantity)
+
+        print "\n-----"
+        print "Fullfilling order of {} {}".format(quantity, melon_type)
+        print "-----\n"
 
 
 assess_and_pack_orders()
